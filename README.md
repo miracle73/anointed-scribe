@@ -1,5 +1,7 @@
 # The Scribe ✍️
 
+**🔗 Live demo: https://the-scribe-alpha.vercel.app**
+
 An AI writing assistant built for **apostolic, prophetic and Spirit-filled Christian authors**. The Scribe interviews an author the way a ghostwriter would, distills their **Voice DNA**, then drafts full manuscripts that sound unmistakably like *them* — not a generic chatbot.
 
 > "A gifted ghostwriter who has studied the author for years."
