@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #1c1714;
+  --ink-soft: #4a4039;
+  --parchment: #f6f1e7;
+  --parchment-2: #efe7d7;
+  --card: #fffdf8;
+  --gold: #b8893a;
+  --gold-deep: #8a6420;
+  --line: #e3d8c3;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-parchment: var(--parchment);
+  --color-parchment-2: var(--parchment-2);
+  --color-card: var(--card);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-line: var(--line);
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--line);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--parchment);
+  color: var(--ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
+
+.paper {
+  background-image:
+    radial-gradient(1200px 600px at 80% -10%, rgba(184, 137, 58, 0.08), transparent),
+    radial-gradient(900px 500px at -10% 110%, rgba(184, 137, 58, 0.06), transparent);
+}
+
+.font-serif { font-family: var(--font-fraunces), Georgia, serif; }
+
+.prose-scribe { line-height: 1.85; font-size: 1.075rem; color: var(--ink); }
+.prose-scribe h1 { font-family: var(--font-fraunces), serif; font-size: 2rem; font-weight: 600; margin: 0.2em 0 0.6em; line-height: 1.15; }
+.prose-scribe h2 { font-family: var(--font-fraunces), serif; font-size: 1.4rem; font-weight: 600; margin: 1.2em 0 0.4em; }
+.prose-scribe p { margin: 0 0 1.1em; }
+.prose-scribe em { color: var(--gold-deep); font-style: italic; }
+.prose-scribe blockquote { border-left: 3px solid var(--gold); padding-left: 1rem; font-style: italic; color: var(--ink-soft); margin: 1.2em 0; }
+.prose-scribe strong { color: var(--ink); }
+
+::selection { background: rgba(184, 137, 58, 0.22); }
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(184,137,58,0.15), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+.scrollbar-thin::-webkit-scrollbar { width: 8px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: var(--line); border-radius: 8px; }
